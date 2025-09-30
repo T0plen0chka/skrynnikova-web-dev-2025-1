@@ -16,7 +16,6 @@ body {
 /* Шапка */
 header {
     margin-bottom: 30px;
-    border-bottom: 2px solid #333;
     padding-bottom: 10px;
 }
 
@@ -44,7 +43,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #2980b9;
+  color: tomato;
   background-color: #ecf0f1;
 }
 
@@ -92,6 +91,7 @@ h2 {
 /* Изображение */
 .dish-item img {
     width: 100%;
+    height: 150px;
     border-radius: 20px;
     margin-bottom: 10px;
 }
@@ -143,39 +143,69 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Адаптивность */
+/* Адаптивность*/
 
-/* Для ширины ≤800px */
+/* Для экранов ≤ 800px:
+   - сетка — 2 колонки
+   - в навигации элементы распределяются с равным пространством между ними (space-between)
+*/
 @media (max-width: 800px) {
-    .dishes-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    nav {
-        justify-content: space-between;
-    }
+  .dishes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  nav {
+    justify-content: space-between;
+    flex: 1;
+  }
+  .dish-item img {
+    height: auto;   
+    max-height: 300px; 
+}
 }
 
-/* Для ширины ≤600px */
+/* ≤600px:
+   - заголовок по центру
+   - меню: вертикально, по центру, ссылки крупнее
+   - заголовки секций по центру
+   - сетка: 1 колонка */
 @media (max-width: 600px) {
-    h1 {
-        text-align: center;
-    }
-    
-    nav {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    nav a {
-        font-size: 18px;
-    }
-    
-    h2 {
-        text-align: center;
-    }
-    
-    .dishes-grid {
-        grid-template-columns: 1fr;
-    }
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 0;
+  }
+
+  header h1 {
+    text-align: center;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  nav a {
+    font-size: 22px; /* +4px */
+    padding: 6px 0;
+  }
+
+  section h2 {
+    text-align: center;
+  }
+
+  .dishes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    max-width: 92%;
+  }
+
+  .dish-item img {
+    height: auto;   
+    max-height: 300px; 
+  }
 }
