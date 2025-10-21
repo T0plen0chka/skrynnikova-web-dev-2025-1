@@ -112,3 +112,90 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+
+/* Адаптивность*/
+
+/* Для экранов ≤ 800px:
+   - сетка — 2 колонки
+   - в навигации элементы распределяются с равным пространством между ними (space-between)
+*/
+@media (max-width: 800px) {
+  .dishes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  nav ul {
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .dish-item img {
+    height: auto;   
+    max-height: 300px; 
+  }
+  
+  /* Адаптация таблицы для средних экранов */
+  table {
+    font-size: 14px;
+  }
+  
+  table th,
+  table td {
+    padding: 8px 5px;
+  }
+}
+
+/* ≤600px:
+   - заголовок по центру
+   - меню: вертикально, по центру, ссылки крупнее
+   - заголовки секций по центру
+   - сетка: 1 колонка */
+@media (max-width: 600px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 0;
+  }
+
+  header h1 {
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  nav li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  nav a {
+    font-size: 18px;
+    padding: 8px 0;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  section h2 {
+    text-align: center;
+  }
+
+  .dishes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    max-width: 92%;
+  }
+
+  .dish-item img {
+    height: auto;   
+    max-height: 300px; 
+  }
+}

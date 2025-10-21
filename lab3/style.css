@@ -1,4 +1,4 @@
-/* Базовые стили */
+/* Р‘Р°Р·РѕРІС‹Рµ СЃС‚РёР»Рё */
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +16,7 @@ body {
   padding: 0 20px;
 }
 
-/* Шапка */
+/* РЁР°РїРєР° */
 header {
   margin-bottom: 30px;
   padding-bottom: 10px;
@@ -27,7 +27,7 @@ h1 {
   margin-bottom: 10px;
 }
 
-/* Навигация */
+/* РќР°РІРёРіР°С†РёСЏ */
 nav {
   display: flex;
   gap: 15px;
@@ -54,7 +54,7 @@ nav a.active {
   color: tomato;
 }
 
-/* Секции */
+/* РЎРµРєС†РёРё */
 section {
   margin-bottom: 40px;
 }
@@ -64,14 +64,14 @@ h2 {
   margin-bottom: 20px;
 }
 
-/* Сетка блюд */
+/* РЎРµС‚РєР° Р±Р»СЋРґ */
 .dishes-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
 
-/* Карточка блюда */
+/* РљР°СЂС‚РѕС‡РєР° Р±Р»СЋРґР° */
 .dish-item {
   display: flex;
   flex-direction: column;
@@ -91,7 +91,7 @@ h2 {
   color: white;
 }
 
-/* Изображение */
+/* РР·РѕР±СЂР°Р¶РµРЅРёРµ */
 .dish-item img {
   width: 100%;
   height: 150px;
@@ -99,7 +99,7 @@ h2 {
   margin-bottom: 10px;
 }
 
-/* Цена */
+/* Р¦РµРЅР° */
 .dish-item .price {
   font-size: 20px;
   font-weight: bold;
@@ -107,19 +107,19 @@ h2 {
   font-family: 'Roboto', sans-serif;
 }
 
-/* Название */
+/* РќР°Р·РІР°РЅРёРµ */
 .dish-item .name {
   font-size: 18px;
   margin-bottom: 5px;
 }
 
-/* Вес */
+/* Р’РµСЃ */
 .dish-item .weight {
   color: #666;
   margin-bottom: 10px;
 }
 
-/* Кнопка */
+/* РљРЅРѕРїРєР° */
 .dish-item button {
   background: #f1eee9;
   border: none;
@@ -129,7 +129,7 @@ h2 {
   margin-top: auto;
 }
 
-/* Футер */
+/* Р¤СѓС‚РµСЂ */
 footer {
   background: black;
   color: white;
@@ -146,7 +146,7 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Форма заказа */
+/* Р¤РѕСЂРјР° Р·Р°РєР°Р·Р° */
 .order-form-section {
     background-color: #fff;
     padding: 30px;
@@ -277,7 +277,7 @@ footer a:hover {
     background-color: #e04e2e;
 }
 
-/* Футер */
+/* Р¤СѓС‚РµСЂ */
 footer {
     background: black;
     color: white;
@@ -294,12 +294,12 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Адаптивность*/
+/* РђРґР°РїС‚РёРІРЅРѕСЃС‚СЊ*/
 
-/* Для экранов ? 800px:
-   - сетка — 2 колонки
-   - в навигации элементы распределяются с равным пространством между ними (space-between)
-   - форма заказа - 1 колонка
+/* Р”Р»СЏ СЌРєСЂР°РЅРѕРІ в‰¤ 800px:
+   - СЃРµС‚РєР° вЂ” 2 РєРѕР»РѕРЅРєРё
+   - РІ РЅР°РІРёРіР°С†РёРё СЌР»РµРјРµРЅС‚С‹ СЂР°СЃРїСЂРµРґРµР»СЏСЋС‚СЃСЏ СЃ СЂР°РІРЅС‹Рј РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕРј РјРµР¶РґСѓ РЅРёРјРё (space-between)
+   - С„РѕСЂРјР° Р·Р°РєР°Р·Р° - 1 РєРѕР»РѕРЅРєР°
 */
 @media (max-width: 800px) {
   .dishes-grid {
@@ -322,11 +322,11 @@ footer a:hover {
   }
 }
 
-/* ?600px:
-   - заголовок по центру
-   - меню: вертикально, по центру, ссылки крупнее
-   - заголовки секций по центру
-   - сетка: 1 колонка */
+/* в‰¤600px:
+   - Р·Р°РіРѕР»РѕРІРѕРє РїРѕ С†РµРЅС‚СЂСѓ
+   - РјРµРЅСЋ: РІРµСЂС‚РёРєР°Р»СЊРЅРѕ, РїРѕ С†РµРЅС‚СЂСѓ, СЃСЃС‹Р»РєРё РєСЂСѓРїРЅРµРµ
+   - Р·Р°РіРѕР»РѕРІРєРё СЃРµРєС†РёР№ РїРѕ С†РµРЅС‚СЂСѓ
+   - СЃРµС‚РєР°: 1 РєРѕР»РѕРЅРєР° */
 @media (max-width: 600px) {
   header {
     flex-direction: column;
