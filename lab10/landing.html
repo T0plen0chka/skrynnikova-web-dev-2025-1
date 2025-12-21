@@ -1,0 +1,428 @@
+﻿<!-- landing.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Construct - Доставка бизнес-ланчей</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Кастомные стили -->
+    <style>
+        :root {
+            --primary-color: tomato;
+            --secondary-color: black;
+            --light-bg: white;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--secondary-color);
+            padding-top: 76px; /* Для фиксированного навбара */
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('imagesland/backlunch.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .cta-section {
+            background-color: var(--primary-color);
+            color: black;
+            padding: 80px 0;
+        }
+        
+        .contact-section {
+            background-color: var(--light-bg);
+            padding: 80px 0;
+        }
+        
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 12px 30px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: tomato;
+            border-color: tomato;
+            transform: translateY(-2px);
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .navbar-brand span {
+            color: var(--primary-color);
+        }
+        
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 30px 0;
+        }
+        
+        .contact-info {
+            margin-bottom: 10px;
+        }
+        
+        .contact-info i {
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-section p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="landing.html">
+                Food <span>Construct</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Преимущества</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cta">Заказать</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Контакты</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="landing.html">О нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary-custom ms-lg-3 mt-2 mt-lg-0" href="index.html">Собрать ланч</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Герой-секция -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Здоровые бизнес-ланчи с доставкой в офис</h1>
+                    <p class="lead mb-4">Сбалансированные обеды, приготовленные из свежих продуктов по доступным ценам. Позаботьтесь о питании своей команды!</p>
+                    <a href="#cta" class="btn btn-primary-custom btn-lg">Попробовать бесплатно</a>
+                </div>
+                <div class="col-lg-6 mt-4 mt-lg-0">
+                    <img src="imagesland/lunch1.png" 
+                         alt="Бизнес-ланч" 
+                         class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section id="features" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Почему выбирают нас</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="text-center p-4">
+                        <div class="feature-icon">
+                            <i class="bi bi-clock-history"></i>
+                        </div>
+                        <h4 class="mb-3">Быстрая доставка</h4>
+                        <p>Доставляем свежие обеды прямо в офис к назначенному времени. Максимальное время доставки - 60 минут.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-4">
+                        <div class="feature-icon">
+                            <i class="bi bi-egg-fried"></i>
+                        </div>
+                        <h4 class="mb-3">Свежие ингредиенты</h4>
+                        <p>Используем только свежие продукты от проверенных поставщиков. Все блюда готовятся в день доставки.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-4">
+                        <div class="feature-icon">
+                            <i class="bi bi-cash-coin"></i>
+                        </div>
+                        <h4 class="mb-3">Доступные цены</h4>
+                        <p>Гибкая система скидок для корпоративных клиентов. Чем больше заказ, тем выгоднее цена.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-4">
+                        <div class="feature-icon">
+                            <i class="bi bi-person-check"></i>
+                        </div>
+                        <h4 class="mb-3">Индивидуальный подход</h4>
+                        <p>Учитываем пищевые предпочтения и ограничения каждого сотрудника. Есть вегетарианские опции.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-4">
+                        <div class="feature-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h4 class="mb-3">Гарантия качества</h4>
+                        <p>Все блюда проходят строгий контроль качества. Сертификаты соответствия и гигиенические сертификаты.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-4">
+                        <div class="feature-icon">
+                            <i class="bi bi-phone-vibrate"></i>
+                        </div>
+                        <h4 class="mb-3">Удобное приложение</h4>
+                        <p>Заказывайте через наше мобильное приложение. Отслеживайте статус заказа в реальном времени.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Призыв к действию -->
+    <section id="cta" class="cta-section">
+        <div class="container text-center">
+            <h2 class="mb-4">Готовы попробовать?</h2>
+            <p class="lead mb-5">Закажите первый ланч со скидкой 20% для вашей компании</p>
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="card shadow">
+                        <div class="card-body p-4">
+                            <h4 class="card-title mb-4">Получите коммерческое предложение</h4>
+                            <p class="card-text mb-4">Оставьте заявку и наш менеджер свяжется с вами для обсуждения деталей</p>
+                            <a href="index.html" class="btn btn-dark btn-lg w-100">Собрать свой ланч</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты и форма обратной связи -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Свяжитесь с нами</h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <h4 class="mb-4">Контактная информация</h4>
+                    <div class="contact-info">
+                        <i class="bi bi-geo-alt"></i>
+                        <strong>Адрес:</strong> Москва, ул. Примерная, д. 123
+                    </div>
+                    <div class="contact-info">
+                        <i class="bi bi-telephone"></i>
+                        <strong>Телефон:</strong> <a href="tel:+70000000000">+7-000-000-00-00</a>
+                    </div>
+                    <div class="contact-info">
+                        <i class="bi bi-envelope"></i>
+                        <strong>Email:</strong> <a href="mailto:info@foodconstruct.ru">info@foodconstruct.ru</a>
+                    </div>
+                    <div class="contact-info">
+                        <i class="bi bi-clock"></i>
+                        <strong>Время работы:</strong> Пн-Пт: 8:00-20:00, Сб-Вс: 10:00-18:00
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h4 class="mb-4">Форма обратной связи</h4>
+                    <form id="contact-form">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="name" class="form-label">Имя *</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="phone" class="form-label">Телефон *</label>
+                                    <input type="tel" class="form-control" id="phone" required>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email *</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="company" class="form-label">Компания</label>
+                                    <input type="text" class="form-control" id="company">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="message" class="form-label">Сообщение</label>
+                                    <textarea class="form-control" id="message" rows="4"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="agree" required>
+                                    <label class="form-check-label" for="agree">
+                                        Согласен на обработку персональных данных
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary-custom">Отправить сообщение</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Food Construct</h5>
+                    <p>Доставка бизнес-ланчей в Москве</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>&copy; 2025 Food Construct. Все права защищены.</p>
+                    <nav class="nav justify-content-end">
+                        <a class="nav-link text-white" href="../lab1/index.html">О нас</a>
+                        <a class="nav-link text-white" href="index.html">Собрать ланч</a>
+                        <a class="nav-link text-white" href="order.html">Оформить заказ</a>
+                        <a class="nav-link text-white" href="orders.html">Заказы</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle с Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- Скрипт для плавной прокрутки и обработки формы -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Плавная прокрутка для навигационных ссылок
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Обработка формы обратной связи
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Простая валидация
+                    const name = document.getElementById('name').value.trim();
+                    const phone = document.getElementById('phone').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    
+                    if (!name || !phone || !email) {
+                        alert('Пожалуйста, заполните все обязательные поля');
+                        return;
+                    }
+                    
+                    // В реальном проекте здесь был бы AJAX запрос к серверу
+                    alert('Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.');
+                    contactForm.reset();
+                });
+            }
+            
+            // Добавляем активный класс к текущему разделу в навигации
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            
+            window.addEventListener('scroll', function() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (scrollY >= (sectionTop - 100)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

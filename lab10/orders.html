@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>История заказов - Food Construct</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Food Construct</h1>
+            <nav>
+                <a href="landing.html">О нас</a>
+                <a href="index.html">Собрать ланч</a>
+                <a href="order.html">Оформить заказ</a>
+                <a href="orders.html" class="active">Заказы</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="orders-section">
+                <h2>История заказов</h2>
+                
+                <div class="orders-table-container">
+                    <table id="orders-table">
+                        <thead>
+                            <tr>
+                                <th>№</th>
+                                <th>Дата оформления</th>
+                                <th>Состав заказа</th>
+                                <th>Стоимость</th>
+                                <th>Время доставки</th>
+                                <th>Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-list">
+                            <!-- Заказы будут загружены через JavaScript -->
+                            <tr id="loading-row">
+                                <td colspan="6" class="loading-message">
+                                    <div class="loading-spinner"></div>
+                                    <span>Загрузка заказов...</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div id="no-orders-message" style="display: none;">
+                        <p>У вас пока нет заказов. <a href="index.html">Создайте свой первый заказ!</a></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer id="contacts">
+        <div class="container">
+            <p>Позвонить нам <a href="tel:+70000000000">+7-000-000-00-00</a></p>
+            <p>Email: <a href="mailto:info@foodconstruct.ru">info@foodconstruct.ru</a></p>
+            <p>Адрес: Москва, ул. Примерная, д. 123</p>
+        </div>
+    </footer>
+
+    <!-- Модальные окна -->
+    
+    <!-- Модальное окно просмотра заказа -->
+    <div id="view-order-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Просмотр заказа</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="order-details-view">
+                    <div class="order-info-row">
+                        <strong>Дата оформления:</strong>
+                        <span id="view-order-date"></span>
+                    </div>
+                    
+                    <h4>Доставка</h4>
+                    <div class="order-info-row">
+                        <strong>Имя получателя:</strong>
+                        <span id="view-order-name"></span>
+                    </div>
+                    <div class="order-info-row">
+                        <strong>Адрес доставки:</strong>
+                        <span id="view-order-address"></span>
+                    </div>
+                    <div class="order-info-row">
+                        <strong>Тип доставки:</strong>
+                        <span id="view-order-type"></span>
+                    </div>
+                    <div class="order-info-row">
+                        <strong>Телефон:</strong>
+                        <span id="view-order-phone"></span>
+                    </div>
+                    <div class="order-info-row">
+                        <strong>Email:</strong>
+                        <span id="view-order-email"></span>
+                    </div>
+                    <div class="order-info-row">
+                        <strong>Комментарий:</strong>
+                        <span id="view-order-comment"></span>
+                    </div>
+                    
+                    <h4>Состав заказа</h4>
+                    <div id="view-order-dishes"></div>
+                    
+                    <div class="order-info-row total-row">
+                        <strong>Стоимость заказа:</strong>
+                        <span id="view-order-total"></span>Р
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn ok-btn" id="view-modal-ok">Ок</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно редактирования заказа -->
+    <div id="edit-order-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Редактирование заказа</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="edit-order-form">
+                    <input type="hidden" id="edit-order-id">
+                    
+                    <div class="order-info-row">
+                        <strong>Дата оформления:</strong>
+                        <span id="edit-order-date"></span>
+                    </div>
+                    
+                    <h4>Доставка</h4>
+                    <div class="form-group">
+                        <label for="edit-full-name">Имя получателя:</label>
+                        <input type="text" id="edit-full-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-delivery-address">Адрес доставки:</label>
+                        <input type="text" id="edit-delivery-address" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Тип доставки:</label>
+                        <div class="radio-group">
+                            <input type="radio" id="edit-delivery-type-now" name="edit-delivery-type" value="now">
+                            <label for="edit-delivery-type-now">Как можно скорее</label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" id="edit-delivery-type-by-time" name="edit-delivery-type" value="by_time">
+                            <label for="edit-delivery-type-by-time">К указанному времени</label>
+                        </div>
+                    </div>
+                    <div class="form-group" id="edit-specific-time-group" style="display: none;">
+                        <label for="edit-delivery-time">Время доставки:</label>
+                        <input type="time" id="edit-delivery-time" min="07:00" max="23:00" step="300">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-phone">Телефон:</label>
+                        <input type="tel" id="edit-phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-email">Email:</label>
+                        <input type="email" id="edit-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-comment">Комментарий:</label>
+                        <textarea id="edit-comment" rows="3"></textarea>
+                    </div>
+                    
+                    <h4>Состав заказа</h4>
+                    <div id="edit-order-dishes"></div>
+                    
+                    <div class="order-info-row total-row">
+                        <strong>Стоимость заказа:</strong>
+                        <span id="edit-order-total"></span>Р
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn cancel-btn" id="edit-modal-cancel">Отмена</button>
+                <button class="modal-btn save-btn" id="edit-modal-save">Сохранить</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно удаления заказа -->
+    <div id="delete-order-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Удаление заказа</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Вы уверены, что хотите удалить заказ <span id="delete-order-number"></span>?</p>
+                <p class="warning-text">Это действие нельзя отменить.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn cancel-btn" id="delete-modal-cancel">Отмена</button>
+                <button class="modal-btn delete-btn" id="delete-modal-confirm">Да, удалить</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Уведомления -->
+    <div id="notification-overlay" class="notification-overlay" style="display: none;"></div>
+    <div id="notification" class="notification" style="display: none;">
+        <h3 id="notification-title">Уведомление</h3>
+        <p id="notification-message"></p>
+        <button class="notification-btn" id="notification-ok">OK</button>
+    </div>
+
+    <script src="orders.js"></script>
+</body>
+</html>

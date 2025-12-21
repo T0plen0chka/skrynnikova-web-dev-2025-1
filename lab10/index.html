@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Собрать ланч - Food Construct</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Food Construct</h1>
+            <nav>
+                <a href="landing.html">О нас</a>
+                <a href="index.html" class="active">Собрать ланч</a>
+                <a href="order.html">Оформить заказ</a>
+                <a href="orders.html">Заказы</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="lunch-options">
+                <h2>Готовые варианты ланча</h2>
+                <div class="lunch-grid">
+                    <!-- Вариант 1 -->
+                    <div class="lunch-option">
+                        <h3>Комбо 1</h3>
+                        <div class="lunch-dishes">
+                            <div class="lunch-dish">
+                                <img src="icons/soup.png" alt="Суп">
+                                <p>Суп</p>
+                            </div>
+                            <div class="lunch-dish">
+                                <img src="icons/main.png" alt="Главное блюдо">
+                                <p>Главное блюдо</p>
+                            </div>
+                            <div class="lunch-dish">
+                                <img src="icons/salad.png" alt="Салат">
+                                <p>Салат</p>
+                            </div>
+                            <div class="lunch-dish">
+                                <img src="icons/drink.png" alt="Напиток">
+                                <p>Напиток</p>
+                            </div>
+                        </div>
+                        <p class="dessert-info">Десерт можно добавить к любому ланчу</p>
+                    </div>
+
+                    <!-- Вариант 2 -->
+                    <div class="lunch-option">
+                        <h3>Комбо 2</h3>
+                        <div class="lunch-dishes">
+                            <div class="lunch-dish">
+                                <img src="icons/soup.png" alt="Суп">
+                                <p>Суп</p>
+                            </div>
+                            <div class="lunch-dish">
+                                <img src="icons/main.png" alt="Главное блюдо">
+                                <p>Главное блюдо</p>
+                            </div>
+                            <div class="lunch-dish">
+                                <img src="icons/drink.png" alt="Напиток">
+                                <p>Напиток</p>
+                            </div>
+                        </div>
+                        <p class="dessert-info">Десерт можно добавить к любому ланчу</p>
+                    </div>
+
+                    <!-- Вариант 3 -->
+                    <div class="lunch-option">
+                        <h3>Комбо 3</h3>
+                        <div class="lunch-dishes">
+                            <div class="lunch-dish">
+                                <img src="icons/soup.png" alt="Суп">
+                                <p>Суп</p>
+                            </div>
+                            <div class="lunch-dish">
+                                <img src="icons/salad.png" alt="Салат">
+                                <p>Салат</p>
+                            </div>
+                            <div class="lunch-dish">
+                                <img src="icons/drink.png" alt="Напиток">
+                                <p>Напиток</p>
+                            </div>
+                        </div>
+                        <p class="dessert-info">Десерт можно добавить к любому ланчу</p>
+                    </div>
+
+                    <!-- Вариант 4 -->
+                    <div class="lunch-option">
+                        <h3>Комбо 4</h3>
+                        <div class="lunch-dishes">
+                            <div class="lunch-dish">
+                                <img src="icons/main.png" alt="Главное блюдо">
+                                <p>Главное блюдо</p>
+                            </div>
+                            <div class="lunch-dish">
+                                <img src="icons/salad.png" alt="Салат">
+                                <p>Салат</p>
+                            </div>
+                            <div class="lunch-dish">
+                                <img src="icons/drink.png" alt="Напиток">
+                                <p>Напиток</p>
+                            </div>
+                        </div>
+                        <p class="dessert-info">Десерт можно добавить к любому ланчу</p>
+                    </div>
+
+                    <!-- Вариант 5 -->
+                    <div class="lunch-option">
+                        <h3>Комбо 5</h3>
+                        <div class="lunch-dishes">
+                            <div class="lunch-dish">
+                                <img src="icons/main.png" alt="Главное блюдо">
+                                <p>Главное блюдо</p>
+                            </div>
+                            <div class="lunch-dish">
+                                <img src="icons/drink.png" alt="Напиток">
+                                <p>Напиток</p>
+                            </div>
+                        </div>
+                        <p class="dessert-info">Десерт можно добавить к любому ланчу</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="container">
+            <!-- Супы -->
+            <section>
+                <h2>Выберите суп</h2>
+                <div class="filters">
+                    <button class="filter-btn" data-kind="fish" data-category="soup">рыбный</button>
+                    <button class="filter-btn" data-kind="meat" data-category="soup">мясной</button>
+                    <button class="filter-btn" data-kind="veg" data-category="soup">вегетарианский</button>
+                </div>
+                <div class="dishes-grid" id="soup-grid">
+                    <!-- Блюда будут добавлены через JavaScript -->
+                </div>
+            </section>
+
+            <!-- Главные блюда -->
+            <section>
+                <h2>Выберите главное блюдо</h2>
+                <div class="filters">
+                    <button class="filter-btn" data-kind="fish" data-category="main">рыбное</button>
+                    <button class="filter-btn" data-kind="meat" data-category="main">мясное</button>
+                    <button class="filter-btn" data-kind="veg" data-category="main">вегетарианское</button>
+                </div>
+                <div class="dishes-grid" id="main-grid">
+                    <!-- Блюда будут добавлены через JavaScript -->
+                </div>
+            </section>
+
+            <!-- Салаты -->
+            <section>
+                <h2>Выберите салат или стартер</h2>
+                <div class="filters">
+                    <button class="filter-btn" data-kind="fish" data-category="starter">рыбный</button>
+                    <button class="filter-btn" data-kind="meat" data-category="starter">мясной</button>
+                    <button class="filter-btn" data-kind="veg" data-category="starter">вегетарианский</button>
+                </div>
+                <div class="dishes-grid" id="starter-grid">
+                    <!-- Блюда будут добавлены через JavaScript -->
+                </div>
+            </section>
+
+            <!-- Напитки -->
+            <section>
+                <h2>Выберите напиток</h2>
+                <div class="filters">
+                    <button class="filter-btn" data-kind="cold" data-category="drink">холодный</button>
+                    <button class="filter-btn" data-kind="hot" data-category="drink">горячий</button>
+                </div>
+                <div class="dishes-grid" id="drink-grid">
+                    <!-- Блюда будут добавлены через JavaScript -->
+                </div>
+            </section>
+
+            <!-- Десерты -->
+            <section>
+                <h2>Выберите десерт</h2>
+                <div class="filters">
+                    <button class="filter-btn" data-kind="small" data-category="dessert">маленькая порция</button>
+                    <button class="filter-btn" data-kind="medium" data-category="dessert">средняя порция</button>
+                    <button class="filter-btn" data-kind="large" data-category="dessert">большая порция</button>
+                </div>
+                <div class="dishes-grid" id="dessert-grid">
+                    <!-- Блюда будут добавлены через JavaScript -->
+                </div>
+            </section>
+        </div>
+
+        <!-- Панель для перехода к оформлению заказа -->
+        <div id="order-panel" class="order-panel">
+            <div class="order-panel-content">
+                <div class="order-panel-total">
+                    <span>Стоимость: </span>
+                    <strong id="current-total">0</strong>Р
+                </div>
+                <a href="order.html" class="order-panel-btn" id="go-to-order-btn">Перейти к оформлению</a>
+            </div>
+        </div>
+    </main>
+
+    <footer id="contacts">
+        <div class="container">
+            <p>Позвонить нам <a href="tel:+70000000000">+7-000-000-00-00</a></p>
+            <p>Email: <a href="mailto:info@foodconstruct.ru">info@foodconstruct.ru</a></p>
+            <p>Адрес: Москва, ул. Примерная, д. 123</p>
+        </div>
+    </footer>
+
+    <!-- Подключаем JavaScript файлы -->
+    <script src="dishes.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
