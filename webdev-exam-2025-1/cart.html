@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина - Интернет-магазин</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Хедер -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-store"></i>
+                    <span>TechShop</span>
+                </a>
+                
+                <div class="header-icons">
+                    <a href="index.html" class="home-icon" title="Главная">
+                        <i class="fas fa-home"></i>
+                    </a>
+                    <a href="orders.html" class="user-icon" title="Личный кабинет">
+                        <i class="fas fa-user"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Область уведомлений -->
+    <div class="notifications" id="notifications"></div>
+
+    <main class="container cart-container">
+        <div class="cart-content">
+            <!-- Корзина -->
+            <section class="cart-section">
+                <h2>Корзина</h2>
+                <div class="cart-grid" id="cart-items">
+                    <!-- Товары будут загружены через JS -->
+                </div>
+                <div class="empty-cart" id="empty-cart">
+                    <p>Корзина пуста. Перейдите в каталог, чтобы добавить товары.</p>
+                </div>
+            </section>
+            
+            <!-- Форма заказа -->
+            <section class="order-form-section">
+                <h2>Оформление заказа</h2>
+                <form id="order-form">
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" id="name" name="full_name" required placeholder="Иванов Иван">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="example@mospolytech.ru">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Номер телефона</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+74952230523">
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <label>
+                            <input type="checkbox" id="subscribe" name="subscribe">
+                            <span>Подписаться на рассылку</span>
+                        </label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Адрес доставки</label>
+                        <input type="text" id="address" name="delivery_address" required placeholder="ул. Большая Семёновская, 38">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="delivery-date">Дата доставки</label>
+                        <input type="date" id="delivery-date" name="delivery_date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="delivery-interval">Временной интервал доставки</label>
+                        <select id="delivery-interval" name="delivery_interval" required>
+                            <option value="08:00-12:00">08:00-12:00</option>
+                            <option value="12:00-14:00">12:00-14:00</option>
+                            <option value="14:00-18:00">14:00-18:00</option>
+                            <option value="18:00-22:00" selected>18:00-22:00</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comment">Комментарий</label>
+                        <textarea id="comment" name="comment" rows="3" placeholder="Дополнительные пожелания..."></textarea>
+                    </div>
+                    
+                    <div class="order-summary">
+                        <h3>Итоговая стоимость: <span id="total-price">0</span> ₽</h3>
+                        <p id="delivery-cost-info">(стоимость доставки: <span id="delivery-cost">200</span> ₽)</p>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="button" id="reset-form" class="btn-secondary">Сбросить</button>
+                        <button type="submit" id="submit-order" class="btn-primary">Оформить</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <p>TechShop</p>
+            <p>Email: support@techshop.ru | Телефон: +7 (000) 000-00-00</p>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/notifications.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>
