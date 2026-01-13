@@ -102,6 +102,10 @@
             const order = await api.getOrder(id);
             const [day, month, year] = order.delivery_date.split('.');
             
+            document.getElementById('edit-created-at').value =
+                new Date(order.created_at).toLocaleDateString('ru-RU') + ' ' +
+                new Date(order.created_at).toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit'});
+            
             document.getElementById('edit-name').value = order.full_name;
             document.getElementById('edit-phone').value = order.phone;
             document.getElementById('edit-email').value = order.email;
@@ -109,6 +113,24 @@
             document.getElementById('edit-date').value = `${year}-${month}-${day}`;
             document.getElementById('edit-interval').value = order.delivery_interval;
             document.getElementById('edit-comment').value = order.comment || '';
+            
+            // Товары
+            const products = await Promise.all(order.good_ids.map(id => api.getGoodById(id)));
+            
+            // Стоимость (расссчет)
+            const total = products.reduce((sum, product) => {
+                if (!product) return sum;
+                return sum + (product.discount_price || product.actual_price);
+            }, 0);
+            
+            // Состав заказа
+            const itemsContainer = document.getElementById('edit-order-items');
+            itemsContainer.innerHTML = products.map(product => 
+                product ? `<div class="edit-order-item">${product.name} - ${product.discount_price || product.actual_price} ₽</div>` : ''
+            ).join('');
+            
+            // Стоимость (отображение)
+            document.getElementById('edit-total').value = total.toLocaleString() + ' ₽';
             
             const modal = document.getElementById('edit-order-modal');
             modal.dataset.orderId = id;
